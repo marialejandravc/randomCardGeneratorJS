@@ -1,1 +1,91 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/5477762/pexels-photo-5477762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.card-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.card {
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  font-size: 2em;
+  width: 150px;
+  height: 200px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  font-size: 1.5em;
+}
+
+.card.corazones::before,
+.card.corazones::after {
+  content: "♥";
+  color: red;
+}
+
+.card.diamantes::before,
+.card.diamantes::after {
+  content: "♦";
+  color: red;
+}
+
+.card.picas::before,
+.card.picas::after {
+  content: "♠";
+  color: black;
+}
+
+.card.treboles::before,
+.card.treboles::after {
+  content: "♣";
+  color: black;
+}
+
+.card::before {
+  top: 0px;
+  left: 10px;
+}
+
+.card::after {
+  bottom: 0px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+.blur-background {
+  filter: blur(10px);
+}
+
+.footer {
+  background-color: rgba(255, 255, 255, 0.432);
+  border-radius: 50px;
+  font-weight: bolder;
+}
